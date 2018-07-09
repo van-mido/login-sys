@@ -1,0 +1,22 @@
+body { 
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+ul li { list-style: none; }
+
+label { display: block; }
+
+.status { font-style: italic; color: orange; }
+
+
+.content {
+
+	width: 950px;
+	margin: 0 auto;
+	border: dotted #e3e3e3 1px;
+	padding: 10px 5px;
+}
+		
+ 
