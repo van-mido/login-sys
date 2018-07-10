@@ -19,7 +19,8 @@
  					$username = trim(htmlspecialchars($_POST['username']));
  					$password = trim(htmlspecialchars($_POST['password']));
 
- 					//$login_view = query_db("SELECT id FROM members WHERE username = :username AND password = md5(:password)", 
+ 					// Query to validate user type and login
+
  					$login_view = query_db("SELECT members.id, permissions.name FROM members, permissions WHERE username = :username AND password = md5(:password) AND permissions.id = members.type;", 
  							
  							[ 
@@ -78,7 +79,7 @@
 // Function view (more info: functions.php), put your page name and variables (acrosss $data['variable_to_pass'] = 'content') to pass.
  		
  		
-	view('login', $data);
+		view('login', $data);
 
 
 	

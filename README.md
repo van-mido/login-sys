@@ -1,8 +1,8 @@
-# Login-sys |
+# Login-sys | Simple but complete | MVC - PDO controller
 
 # Requirements
 
-PHP version 5.3 or > |
+PHP version 5.4 or > |
 Mysql or MariaDB --> DB |
 Apache2 or Nginx --> web Server
 
@@ -13,3 +13,10 @@ Apache2 or Nginx --> web Server
 To install database:
  -> mysql -u root -p < login_sys.sql
 
+
+# Characteristics
+
+
+- User Managment
+- Admin permissions
+- Reset password to email 
