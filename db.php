@@ -8,7 +8,7 @@
 
 $config = [
 				'DB_NAME' => 'login',  
-				'DB_USER' => 'rvargas',  // Put header_remove() your username for mysql or mariadb
+				'DB_USER' => 'rvargas',  // Put here your username for mysql or mariadb
 				'DB_PASS' => 'admin'	// Put here your mysql-mariadb password	
 		  ];
 
