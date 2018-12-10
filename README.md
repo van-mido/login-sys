@@ -2,7 +2,7 @@
 
 # Requirements
 
-PHP version 5.4 or > |
+PHP version 5.6 or > |
 Mysql or MariaDB --> DB |
 Apache2 or Nginx --> web Server
 
