@@ -73,7 +73,7 @@ if (!isset($_SESSION['username'])) {
 			 * If is true, the email is already in use
 			 */	
 
-		} else if ($check_email = query_db("SELECT username FROM members WHERE username = :username", 
+		} else if ($check_username = query_db("SELECT username FROM members WHERE username = :username", 
 									[
 
 										'username' => $_POST['username']	
