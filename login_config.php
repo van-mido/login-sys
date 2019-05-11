@@ -6,7 +6,7 @@
 
  		$conn = connect($config);
 
- 		if (!$conn) die("Don't be connect"); 
+ 		if (!$conn) die("Don't be connect to DB"); 
 
 
  	// Set time for inactivity	
