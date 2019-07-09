@@ -25,7 +25,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'admin',1,'admin@southpark.com','21232f297a57a5a743894a0e4a801fc3',''),(2,'ecartman',2,'ecartman@southpark.com','c2915c68dd89e9cb746dde154e612b65',NULL),(3,'smarsh',2,'smarsh@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(3,'cheff',2,'cheff@southpark.com','680472087f0f5724ffc491a37569e4ad',NULL),(4,'bstotch',2,'bstotch@southpark.com','827ccb0eea8a706c4c34a16891f84e7b',NULL),(5,'tblack',2,'tblack@soutpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(6,'smalkinson',2,'smalkinson@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(7,'ctucker',2,'ctucker@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(8,'kmccormick',1,'kmccormick@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL);
+INSERT INTO `members` VALUES (1,'admin',1,'admin@southpark.com','21232f297a57a5a743894a0e4a801fc3',''),(2,'ecartman',2,'ecartman@southpark.com','c2915c68dd89e9cb746dde154e612b65',NULL),(3,'smarsh',2,'smarsh@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(4,'bstotch',2,'bstotch@southpark.com','827ccb0eea8a706c4c34a16891f84e7b',NULL),(5,'tblack',2,'tblack@soutpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(6,'smalkinson',2,'smalkinson@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(7,'ctucker',2,'ctucker@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(8,'kmccormick',1,'kmccormick@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
