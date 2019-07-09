@@ -13,6 +13,9 @@ Apache2 or Nginx --> web Server
 To install database:
  -> mysql -u root -p < login_sys.sql
 
+Default admin user-password:
+
+admin/admin
 
 # Characteristics
 
