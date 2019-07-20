@@ -1,14 +1,19 @@
 
 
 	<h1>Login</h1>
-	<form action="" method="post">
-		<ul>
-			<li><label for="username">Username: *</label><input type="text" name="username" id="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>"></li>
-			<li><label for="password">Password: *</label><input type="password" name="password" id="password"></li>
-			<li><button type="submit" name="submit">Login</button></li>
-		</ul>
+	<form method="post">
+		
+			<div class="form-group">
+				<input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>">			
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" id="password" placeholder="Password">				
+			</div>
+			<button class="btn btn-outline-primary btn-block" type="submit" name="submit">Login</button>
+		
 	</form>
 
+	
 
 
 	<?php if (isset($status)): ?>
