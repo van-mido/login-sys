@@ -1,6 +1,20 @@
-CREATE DATABASE IF NOT EXISTS login CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- MySQL dump 10.15  Distrib 10.0.38-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: login
+-- ------------------------------------------------------
+-- Server version	10.0.38-MariaDB-0ubuntu0.16.04.1
 
-USE login;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `members`
 --
@@ -16,7 +30,7 @@ CREATE TABLE `members` (
   `password` varchar(100) NOT NULL,
   `pwd_reset` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -25,7 +39,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'admin',1,'admin@southpark.com','21232f297a57a5a743894a0e4a801fc3',''),(2,'ecartman',2,'ecartman@southpark.com','c2915c68dd89e9cb746dde154e612b65',NULL),(3,'smarsh',2,'smarsh@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(4,'bstotch',2,'bstotch@southpark.com','827ccb0eea8a706c4c34a16891f84e7b',NULL),(5,'tblack',2,'tblack@soutpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(6,'smalkinson',2,'smalkinson@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(7,'ctucker',2,'ctucker@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL),(8,'kmccormick',1,'kmccormick@southpark.com','81dc9bdb52d04dc20036dbd8313ed055',NULL);
+INSERT INTO `members` VALUES (1,'admin',1,'admin@southpark.com','$2y$10$O6lu3QqP.c4.ZwWlBAy8oO4qdFmcxurliKr667wu9eEt03YTjNivi',NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-07-09  9:12:26
+-- Dump completed on 2019-07-22 21:41:53
