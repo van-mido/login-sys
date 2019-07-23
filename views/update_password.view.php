@@ -1,12 +1,17 @@
 <h1>Update Password</h1>
 
-<form action="" method="post">
-	<ul>
-		<li><label for="current_pass">Current Password</label><input type="password" name="current_pass" id="current_pass"> <?= isset($current_pass) ? "<strong>" . $current_pass . "</strong>" : ''; ?></li>
-		<li><label for="password">New Password</label><input type="password" name="password" id="password"></li>
-		<li><label for="password2">Password (again)</label><input type="password" name="password2" id="password2"></li>
-		<li><button type="submit" name="update">Update Password</button></li>
-	</ul>
+<form method="post">
+	<div class="form-group">
+		<input type="password" class="form-control" name="current_pass" id="current_pass" placeholder="Current Password"> <?= isset($current_passwd) ? "<strong>" . $current_passwd . "</strong>" : ''; ?>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" name="password" id="password" placeholder="New Password">
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" name="password2" id="password2" placeholder="Password (again)">			
+	</div>
+		<button type="submit" class="btn btn-outline-primary" name="update">Update Password</button>
+	
 </form>
 
 <?php if (isset($status)): ?>

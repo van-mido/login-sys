@@ -19,45 +19,69 @@
  					$username = trim(htmlspecialchars($_POST['username']));
  					$password = trim(htmlspecialchars($_POST['password']));
 
+
+
  					// Query to validate user type and login
 
- 					$login_view = query_db("SELECT members.id, permissions.name FROM members, permissions WHERE username = :username AND password = md5(:password) AND permissions.id = members.type;", 
+ 					 // $pass_capture = password_hash($password, PASSWORD_DEFAULT);
+
+ 					
+
+ 					 $pass_check = query_db("SELECT password FROM members WHERE username = :username", 
  							
- 							[ 
- 								
- 								'username' => $username,
- 							   	'password' => $password			
+ 							[ 			 								
+ 							   	'username' => $username		
 
  							], $conn);
 
  						//Validate
- 					
-						if ($login_view) {
+
+ 					 if ($pass_check) {
+
+ 					 	// Store our password for current table
+
+ 					 	$pass_store = $pass_check->fetch();
+
+ 					 	if (password_verify($password, $pass_store['password'])) {
+
+ 					 		$login_view = query_db("SELECT members.id, permissions.name FROM members, permissions WHERE username = :username AND permissions.id = members.type",
+ 					 					  [ 'username' => $username ],
+ 					 					  $conn
+ 					 					);
+
+ 					 		if ($login_view) {
 
  						
-							// Set id row for update password
+								// Set id row for update password
 
- 							$get_row = $login_view->fetch();
+	 							$get_row = $login_view->fetch();
 
 
-							$_SESSION['id'] = $get_row['id']; // We will be use to update password
-							$_SESSION['type'] = $get_row['name']; // We will be use to restric members area
-							$_SESSION['username'] = $username;
-							$_SESSION['last_act'] = time();
+								$_SESSION['id'] = $get_row['id']; // We will be use to update password
+								$_SESSION['type'] = $get_row['name']; // We will be use to restric members area
+								$_SESSION['username'] = $username;
+								$_SESSION['last_act'] = time();
 
 							
 
 								header('Location: members.php');
 
+							} 				
 
-
-						} else { 
-
-								// echo "<strong>Logged Succesfully</strong>";
-								$data['status'] = "Invalid credentials, please try again!";	
+ 					 	} else { 
 
 					
+								$data['status'] = "Password Invalid, please try again!";	
+	
 						}
+
+ 					 	
+ 					 				
+ 					 } else { 
+
+								$data['status'] = "Invalid credentials, please try again!";	
+					
+					 }
 
  				}
 

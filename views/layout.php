@@ -9,13 +9,7 @@
 </head>
 <body>
 
-	<div class="content">
-		<div class="row">
-			<div class="col-md-6">
-				<?php include($path); ?>
-			</div>
-		</div>	
-	</div>
+		<?php include($path); ?>
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/popper.min.js"></script>

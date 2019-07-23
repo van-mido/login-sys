@@ -19,11 +19,8 @@
 
  	*/
  	$setting['site_name'] = "My web login site";
+
+ 	// Site url used for reset password
  	$setting['site_url'] = "http://localhost/"; // Put your autenthic login page
  	
  	
-
- 	// Setting master key for password authentication
-
-
- 	$setting['master_key'] = '@213';

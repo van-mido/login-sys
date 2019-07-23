@@ -18,7 +18,7 @@
 
 		session_destroy();
 
-		// $_SESSION['username'] = [];
+		$_SESSION = [];
 
 		header('Location: login.php?timeout');
 
@@ -47,7 +47,7 @@
 
 			$data['status'] = "Please fill out all box.";
 
-		} else if ($_POST['password'] != $_POST['password2'])  {
+		} else if (trim(htmlspecialchars($_POST['password'])) != trim(htmlspecialchars($_POST['password2'])))  {
 
 			
 			$data['status'] = "Password fields must be the same";
@@ -64,9 +64,13 @@
 		$current_pass = $get_password->fetch();
 
 
-		if ($current_pass['password'] != md5($_POST['current_pass'])) {
+		// Store password
 
-			$data['current_pass'] = "Incorrect";
+		// $passwd_form = trim(htmlspecialchars($_POST['current_pass']));
+
+		if (!password_verify(trim(htmlspecialchars($_POST['current_pass'])), $current_pass['password'])) {
+
+			$data['current_passwd'] = "Your current password is incorrect";
 
 		}
 
@@ -74,9 +78,9 @@
 		else {
 
 			// $username = htmlspecialchars(trim($_POST['username']));
-			$password = htmlspecialchars(trim($_POST['password']));
+			$password = password_hash(trim(htmlspecialchars($_POST['password'])) , PASSWORD_DEFAULT);
 
-			query_db("UPDATE members SET password = md5(:password) WHERE id = :id", 
+			query_db("UPDATE members SET password = :password WHERE id = :id", 
 							[
 
 								

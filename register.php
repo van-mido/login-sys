@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])) {
 			$data['status'] = "Please fill out all box.";
 
 
-		} else if ($_POST['password'] != $_POST['password2'])  {
+		} else if (trim(htmlspecialchars($_POST['password'])) != trim(htmlspecialchars($_POST['password2'])))  {
 
 			
 			$data['status'] = "Password fields must be the same";
@@ -89,9 +89,9 @@ if (!isset($_SESSION['username'])) {
 			$username = htmlspecialchars(trim($_POST['username']));
 			$email = htmlspecialchars(trim($_POST['email']));
 			$type = htmlspecialchars(trim($_POST['type']));
-			$password = htmlspecialchars(trim($_POST['password']));
+			$password = password_hash(htmlspecialchars(trim($_POST['password'])), PASSWORD_DEFAULT);
 
-			query_db("INSERT INTO members (username, type, email, password) VALUES (:username, :type, :email, md5(:password))", 
+			query_db("INSERT INTO members (username, type, email, password) VALUES (:username, :type, :email, :password)", 
 							[
 
 								'username' => $username,

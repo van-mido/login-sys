@@ -11,14 +11,12 @@
 
 		// User must to put a new password
 
-
-
 		$data = [
 					// 'users' => $users,
 					'title' => 'Restore Password'
 				];
 
-			if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['submit'])){
+			if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['submit'])) {
 
 
 				if(empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
@@ -32,10 +30,11 @@
 
 				} else {
 
-					$key = htmlspecialchars(trim($_GET['key']));
-					$email = htmlspecialchars(trim($_POST['email']));
+					$key = trim(htmlspecialchars($_GET['key']));
+					
+					$email = trim(htmlspecialchars($_POST['email']));
 
-					$password = htmlspecialchars(trim($_POST['password']));
+					$password = trim(htmlspecialchars($_POST['password']));
 
 					$check_credentials = query_db("SELECT email FROM members WHERE email = :email AND pwd_reset = :key", 
 										[
@@ -55,7 +54,7 @@
 								query_db("UPDATE members SET password = :password, pwd_reset = :pwd_reset WHERE email = :email", 
 										[
 
-											'password' => md5($password),
+											'password' => password_hash($password, PASSWORD_DEFAULT),
 											'pwd_reset' => '',
 											'email' => $email,	
 												

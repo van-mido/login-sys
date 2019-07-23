@@ -1,11 +1,11 @@
 <h1>Reset Password</h1>
 
 <p>Forgot your password?, enter your email address and we will send a link to reset your password</p>
-<form action="" method="post">
-	<ul>
-		<li><label for="email">Email: </label><input type="text" name="email" id="email"> <?= isset($email_err) ? $email_err : ''; ?></li>
-		<li><button type="submit" name="reset">Reset Password</button></li>
-	</ul>
+<form method="post">
+		<div class="form-group">
+			<input type="text" class="form-control" name="email" id="email" placeholder="Email"> <?= isset($email_err) ? $email_err : ''; ?>			
+		</div>
+		<button type="submit" class="btn btn-outline-primary" name="reset">Reset Password</button>
 </form>
 
 <?php if (isset($status)): ?>
