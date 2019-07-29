@@ -111,7 +111,7 @@ if (!isset($_SESSION['username'])) {
 
 	$data['title'] = 'Register Members';
 
-	$data['type_members'] = get_value($conn, "SELECT * FROM permissions");
+	$data['type_members'] = get_value($conn, "SELECT name FROM permissions ORDER BY name DESC");
 
 	// Function view (more info: functions.php), put your page name and variables (acrosss $data['variable_to_pass'] = 'content') to pass.
 
