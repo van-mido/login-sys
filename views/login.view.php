@@ -1,6 +1,6 @@
 <div class="container mt-4">
 	<div class="row">
-		<div class="col-lg-9">
+		<div class="col-lg-3">
 			<h1>Login</h1>
 			<form method="post">
 				
@@ -14,14 +14,16 @@
 				
 			</form>
 				<?php if (isset($status)): ?>
-					<p class="status"><?= $status; ?></p>		
+					<p class="status mt-2"><?= $status; ?></p>		
 				<?php endif ?>
 
 				<?php if (isset($get_status)): ?>
-					<p class="status"><?= $get_status; header("refresh:3;url=login.php"); ?></p>
+					<p class="status mt-2"><?= $get_status; header("refresh:3;url=login.php"); ?></p>
 				<?php endif ?>
-		</div>
-		<div class="col-lg-3">
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-lg-3 mt-4">
 			<p><a href="reset_password.php">Don't remember your password?, click here</a></p>			
 		</div>
 	</div>

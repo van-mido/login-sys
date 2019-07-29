@@ -101,22 +101,4 @@
 
 	view('update_password', $data);
 
-
-
-
-
-	// while ($row = $users->fetch()) {
-			
-
-	// 	echo $row['username'];
-	// }
-
-	// foreach ($users as $key ) {
 		
-	// 	print_r($key);
-
-	// }
-
-
-
-	
