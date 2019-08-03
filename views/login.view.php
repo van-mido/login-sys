@@ -1,6 +1,6 @@
 <div class="container mt-4">
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-lg-3 m-auto">
 			<h1>Login</h1>
 			<form method="post">
 				
@@ -22,8 +22,8 @@
 				<?php endif ?>
 		</div>		
 	</div>
-	<div class="row">
-		<div class="col-lg-3 mt-4">
+	<div class="row mt-4">
+		<div class="col-lg-3 m-auto">
 			<p><a href="reset_password.php">Don't remember your password?, click here</a></p>			
 		</div>
 	</div>
